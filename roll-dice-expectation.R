@@ -1,22 +1,22 @@
 # Get sum of multiple roll scores
 getRollScoresSum <- function(rollDiceRepeat=2) {
   
-  # result of addition of 2 roll dices
+  # result of addition of 2 roll dice
   result <- 0
   
-  # loop through roll dice number
+  # loop through roll dice repeat number
   for(roll in 1:rollDiceRepeat) {
-    # generate a pseudo-random number from first dice value to last dice value and keep it as its floor
+    # generate a pseudo-random number from first die value to last die value and keep it as its floor
     diceScore <- floor( runif(1, min=dice[1], max=dice[length(dice)]+1) )
     # add diceScore to roll dices' score
     result <- result + diceScore
   }
   
-  # return the result of roll dices' score
+  # return the result of the roll of a dice
   return(result)
 }
 
-# Repeats a random experience which consists of adding multiple rolls dice
+# Repeats a random experience which consists of adding multiple roll dice values
 experience <- function(dice, repeatNumber=50) {
   
   # vector of random sums
